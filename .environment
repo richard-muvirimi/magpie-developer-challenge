@@ -1,0 +1,12 @@
+#Load project variables from one place
+
+app.baseurl = "https://www.magpiehq.com/developer-challenge/smartphones"
+
+selector.pages = "#pages a"
+selector.product = "#products div.product"
+
+#Text data fields readily available
+selector.product.content = "div > div, div > h3 span"
+
+#Extra data to extract. Fields separated by pipe and key, value by equal sign
+selector.product.extra = "color = div span[data-colour] | image = div > img[src]"

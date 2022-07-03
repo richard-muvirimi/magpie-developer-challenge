@@ -1,20 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * Scrape Tool init
+ *
+ * @package App
+ * @since 1.0.0
+ * @version 1.0.0
+ */
+
 namespace App;
 
-require 'vendor/autoload.php';
+use App\Controller\Scraper;
 
-class Scrape
-{
-    private array $products = [];
-
-    public function run(): void
-    {
-        $document = ScrapeHelper::fetchDocument('https://www.magpiehq.com/developer-challenge/smartphones');
-
-        file_put_contents('output.json', json_encode($this->products));
-    }
-}
-
-$scrape = new Scrape();
+/**
+ * And off we go
+ */
+$scrape = new Scraper();
 $scrape->run();

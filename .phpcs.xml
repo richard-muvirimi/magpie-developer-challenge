@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<ruleset name="Magpie Developer Challenge" namespace="App\">
+    <description>Coding Standards for Magpie Developer Challenge and Php 7.4</description>
+
+    <config name="testVersion" value="7.4-"/>
+    <arg name="extensions" value="php"/>
+
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/tests/src/*</exclude-pattern>
+    <exclude-pattern>*/training/*</exclude-pattern>
+
+    <rule ref="PSR2"/>
+    <rule ref="PHPCompatibility"/>
+
+</ruleset>

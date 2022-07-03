@@ -1,14 +1,72 @@
 {
   "name": "magpie/scrape-challenge",
   "type": "project",
+  "license": "MIT",
   "require": {
+    "php": ">=7.4",
     "symfony/dom-crawler": "^5.2",
     "guzzlehttp/guzzle": "^7.2",
-    "symfony/css-selector": "^5.2"
+    "symfony/css-selector": "^5.2",
+    "yooper/php-text-analysis": "^1.7",
+    "jschaedl/byte": "v1.0.0",
+    "innmind/url-resolver": "^4.1",
+    "lodash-php/lodash-php": "^0.0.7"
   },
   "autoload": {
+    "files": [
+      "src/Scrape.php"
+    ],
     "psr-4": {
       "App\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "App\\Tests\\": "tests/src/",
+      "App\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Richard Muvirimi",
+      "email": "rich4rdmuvirimi@gmail.com",
+      "homepage": "http://richard.co.zw",
+      "role": "Developer"
+    },
+    {
+      "name": "Magpie",
+      "role": "Company"
+    }
+  ],
+  "scripts": {
+    "qc": [
+      "@phpcs",
+      "@test"
+    ],
+    "php-cs-setup": [
+      "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run",
+      "@phpcs -i"
+    ],
+    "phpcs": [
+      "vendor/bin/phpcs ."
+    ],
+    "test": "phpunit",
+    "scrape": [
+      "@php index.php"
+    ]
+  },
+  "require-dev": {
+    "phpcompatibility/php-compatibility": "^9.3",
+    "phpunit/phpunit": "^9.5",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
+    "squizlabs/php_codesniffer": "^3.7"
+  },
+  "config": {
+    "platform": {
+      "php": "7.4"
+    },
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
     }
   }
 }
