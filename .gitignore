@@ -5,3 +5,9 @@ output.json
 *.lock
 *.code-workspace
 .phpunit.*
+
+#Docker
+docker_tag
+Dockerfile-php-build
+DOCKER_ENV
+output.log
