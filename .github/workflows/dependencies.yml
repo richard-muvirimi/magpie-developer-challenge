@@ -18,19 +18,19 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+          extensions: intl
+      
       - name: Cache Composer dependencies
         uses: actions/cache@v2
         with:
           path: /tmp/composer-cache
           key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
-      
+          
       - name: Composer Setup
-        uses: php-actions/composer@v6
-        with:
-          dev: no
-          php_version: "7.4"
-          version: latest
-          command: update
+        run: composer update
         
       - name: Commit
         run: |
