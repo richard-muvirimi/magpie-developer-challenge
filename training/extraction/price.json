@@ -1,0 +1,7 @@
+{
+    "name": "price",
+    "training": [
+        "£",
+        "\u00a3"
+    ]
+}

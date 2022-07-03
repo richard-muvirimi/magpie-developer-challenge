@@ -1,0 +1,20 @@
+{
+    "name": "availability",
+    "validation": [
+        {
+            "key": "positive",
+            "training": [
+                "in",
+                "in stock"
+            ]
+        },
+        {
+            "key": "negative",
+            "training": [
+                "out",
+                "out of",
+                "out of stock"
+            ]
+        }
+    ]
+}
